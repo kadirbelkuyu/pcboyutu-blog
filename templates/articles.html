@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h3 style="margin-top: 25px;">Makaleler</h3>
+    <hr>
+
+    {% if articles %}
+        {% for article in articles %}
+            <div class="container">
+            <div class="row">
+                <!-- Post Content Column -->
+                <div class="col-lg-8">
+                    <!-- Title -->
+                    <h3 class="mt-4">{{ article.title }}</h3>
+                    <!-- Author -->
+                    <p class="lead">
+                        by
+                        {{ article.author }}
+                    </p>
+                    <hr>
+                    <!-- Date/Time -->
+                    <p>{{ article.created_date }}</p>
+                    <hr>
+                    <!-- Preview Image -->
+                    <img class="img-fluid rounded" src="{{ article.document.url }}" alt="">
+                    <hr>
+                    <!-- Post Content -->
+                    <p class="lead">
+                        {{ article.content }}
+                    </p>
+                    <hr>
+                </div>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <div class="aler laert-danger">
+            Bu blogda herhangi bir makale bulunmamakta
+        </div>
+    {% endif %}
+{% endblock %}
