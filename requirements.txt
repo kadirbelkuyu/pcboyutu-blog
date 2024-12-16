@@ -1,5 +1,5 @@
 asgiref==3.8.1
-Django==5.0.6
+Django==5.0.10
 django-ckeditor==6.7.1
 django-cleanup==8.1.0
 django-crispy-forms==2.1
